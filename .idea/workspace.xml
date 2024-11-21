@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2c68b06-d78d-47cb-8131-b795ac9e3f27" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/booksmgmtserv/src/main/java/com/koc/booksmgmtserv/TestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/booksmgmtserv/src/main/java/com/koc/booksmgmtserv/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/booksmgmtserv/src/main/java/com/koc/booksmgmtserv/BookRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/booksmgmtserv/src/main/java/com/koc/booksmgmtserv/BookService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booksmgmtserv/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/booksmgmtserv/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booksmgmtserv/src/main/java/com/koc/booksmgmtserv/BooksmgmtservApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/booksmgmtserv/src/main/java/com/koc/booksmgmtserv/BooksmgmtservApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booksmgmtserv/src/main/java/com/koc/booksmgmtserv/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/booksmgmtserv/src/main/java/com/koc/booksmgmtserv/BookController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +43,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -57,6 +62,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/mnt/ld/projects/libmanagement/booksmgmtserv",
