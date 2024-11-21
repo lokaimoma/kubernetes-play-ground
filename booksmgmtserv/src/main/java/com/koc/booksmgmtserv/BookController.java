@@ -36,13 +36,13 @@ public class BookController {
         }
     }
 
-    @GetMapping("/search")
+    @GetMapping("/search/author")
     public Iterable<Book> getBooksByAuthorId(@RequestParam(name = "authorId", defaultValue = "") String authorId) {
         if (authorId.isBlank()) {return List.of();}
         return bookService.getBooksByAuthor(authorId);
     }
 
-    @GetMapping("/search")
+    @GetMapping("/search/title")
     public Optional<Book> getBooksByTitle(@RequestParam(name = "title", defaultValue = "") String title) {
         if (title.isBlank()) {return Optional.empty();}
         return bookService.getBookByTitle(title);

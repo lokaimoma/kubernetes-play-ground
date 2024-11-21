@@ -2,9 +2,9 @@ FROM gradle:8.11.1-jdk-alpine AS builder
 ENV APP_DIR=/app
 WORKDIR ${APP_DIR}
 COPY build.gradle settings.gradle ${APP_DIR}/
-RUN gradle build -x test --no-daemon || return 0
+RUN gradle build --no-daemon || return 0
 COPY . .
-RUN gradle build -x test --no-daemon
+RUN gradle build --no-daemon
 
 
 FROM amazoncorretto:17-alpine3.17

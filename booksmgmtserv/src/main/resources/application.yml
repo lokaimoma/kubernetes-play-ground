@@ -8,3 +8,4 @@ spring:
       database: bookManagementDB
       username: user
       password: password
+      authentication-database: admin
