@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bookmgmtdeploy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: bookmgmtserv
+  template:
+    metadata:
+      labels:
+        app: bookmgmtserv
+    spec:
+      containers:
+        - name: bookmgmtserv
+          image: bookmgmtserv
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              cpu: 100m
+              memory: 100Mi
+            limits:
+              cpu: 300m
+              memory: 500Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bookmgmtserv
+  labels:
+    app: bookmgmtserv
+spec:
+  type: ClusterIP
+  selector:
+    app: bookmgmtserv
+  ports:
+    - port: 80
+      targetPort: 8080
+    
+    

@@ -1,0 +1,17 @@
+apiVersion: skaffold/v4beta11
+kind: Config
+metadata:
+  name: libmanagement
+build:
+  artifacts:
+    - image: bookmgmtserv
+      context: booksmgmtserv
+      docker:
+        dockerfile: Dockerfile
+  tagPolicy:
+    inputDigest: {}
+  local:
+    concurrency: 0
+manifests:
+  rawYaml:
+    - k8smanifests/book_management_service.yml
