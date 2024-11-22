@@ -8,10 +8,15 @@ build:
       context: booksmgmtserv
       docker:
         dockerfile: Dockerfile
+    - image: keycloak
+      context: keycloak
+      docker:
+        dockerfile: Dockerfile
   tagPolicy:
     inputDigest: {}
   local:
     concurrency: 0
 manifests:
-  rawYaml:
-    - k8smanifests/book_management_service.yml
+  kustomize:
+    paths:
+      - k8smanifests
