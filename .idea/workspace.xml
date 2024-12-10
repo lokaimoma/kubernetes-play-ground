@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2c68b06-d78d-47cb-8131-b795ac9e3f27" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/k8smanifests/keycloak.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8smanifests/kustomization.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authservice/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authservice/src/main/java/com/koc/authservice/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authservice/src/main/java/com/koc/authservice/KeycloakUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authservice/src/main/java/com/koc/authservice/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authservice/src/main/java/com/koc/authservice/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8smanifests/auth_service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8smanifests/kustomization.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8smanifests/kustomization.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keycloak/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/keycloak/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/skaffold.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/skaffold.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,6 +23,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/authservice">
+      <ProjectState />
+    </projectState>
     <projectState path="$PROJECT_DIR$/booksmgmtserv">
       <ProjectState />
     </projectState>
@@ -48,9 +58,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2p9nBoYDptlvuTNn2pzjHG3sqBc" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -62,13 +72,18 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/mnt/ld/projects/libmanagement/booksmgmtserv",
+    "last_opened_file_path": "/mnt/ld/projects/libmanagement/k8smanifests",
     "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.3045977",
     "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/k8smanifests" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

@@ -20,7 +20,6 @@ ENV KC_DB=postgres
 ENV KC_DB_URL=jdbc:postgresql://192.168.1.143:5432/keycloakdb
 ENV KC_DB_USERNAME=user
 ENV KC_DB_PASSWORD=password
-ENV KC_HOSTNAME=fedora
 ENV KC_BOOTSTRAP_ADMIN_USERNAME=user
 ENV KC_BOOTSTRAP_ADMIN_PASSWORD=password
 ENTRYPOINT ["/opt/keycloak/bin/kc.sh"]

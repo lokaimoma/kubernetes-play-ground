@@ -12,6 +12,10 @@ build:
       context: keycloak
       docker:
         dockerfile: Dockerfile
+    - image: authservice
+      context: authservice
+      docker:
+        dockerfile: Dockerfile
   tagPolicy:
     inputDigest: {}
   local:
@@ -20,3 +24,5 @@ manifests:
   kustomize:
     paths:
       - k8smanifests
+deploy:
+  kubectl: {}
