@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: authservice
+
+
+keycloak:
+  server-url: http://keycloak:80
+  realm: libmanagement
+  client-id: libmgmt_spring_cli
+  client-secret: 9Knb1Pq4L4N7YI1bZcdT2fsTXD8QBOhO
