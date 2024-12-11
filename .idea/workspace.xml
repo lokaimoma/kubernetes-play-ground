@@ -5,9 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2c68b06-d78d-47cb-8131-b795ac9e3f27" name="Changes" comment="Create new users in keycloak">
+      <change afterPath="$PROJECT_DIR$/gateway/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway/src/main/java/com/koc/gateway/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8smanifests/usermgmt_service.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/BookLoan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/BookLoanController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/BookLoanRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/BookLoanService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/LoanPayload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authservice/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/authservice/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authservice/src/main/java/com/koc/authservice/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authservice/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/.gitattributes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authservice/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authservice/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authservice/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authservice/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authservice/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authservice/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authservice/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authservice/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authservice/src/main/java/com/koc/authservice/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authservice/src/main/java/com/koc/authservice/AuthserviceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/AuthserviceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authservice/src/main/java/com/koc/authservice/KeycloakUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/KeycloakUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authservice/src/main/java/com/koc/authservice/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authservice/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authservice/src/test/java/com/koc/authservice/AuthserviceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/test/java/com/koc/authservice/AuthserviceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8smanifests/auth_service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8smanifests/gateway_service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8smanifests/kustomization.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8smanifests/kustomization.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skaffold.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/skaffold.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,10 +40,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ExternalProjectsData">
-    <projectState path="$PROJECT_DIR$/authservice">
+    <projectState path="$PROJECT_DIR$/booksmgmtserv">
       <ProjectState />
     </projectState>
-    <projectState path="$PROJECT_DIR$/booksmgmtserv">
+    <projectState path="$PROJECT_DIR$/gateway">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/usermgmt">
       <ProjectState />
     </projectState>
   </component>
@@ -42,6 +70,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Dockerfile" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -58,23 +87,60 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/mnt/ld/projects/libmanagement/k8smanifests&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.3045977&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.usermgmt [dependencies].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/mnt/ld/projects/libmanagement/k8smanifests",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.3045977",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/k8smanifests" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/gateway/src/main/resources" />
+      <recent name="$PROJECT_DIR$/gateway" />
+      <recent name="$PROJECT_DIR$/gateway/src/main/java/com/koc/gateway" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/.idea" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="usermgmt [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/usermgmt" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="dependencies" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.usermgmt [dependencies]" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

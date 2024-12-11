@@ -12,8 +12,12 @@ build:
       context: keycloak
       docker:
         dockerfile: Dockerfile
-    - image: authservice
-      context: authservice
+    - image: usermgmt
+      context: usermgmt
+      docker:
+        dockerfile: Dockerfile
+    - image: gateway
+      context: gateway
       docker:
         dockerfile: Dockerfile
   tagPolicy:

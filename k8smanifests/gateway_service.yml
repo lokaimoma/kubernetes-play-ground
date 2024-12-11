@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: authdeploy
+  name: gatewaydeploy
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: authserv
+      app: gatewayserv
   template:
     metadata:
       labels:
-        app: authserv
+        app: gatewayserv
     spec:
       containers:
-        - name: authservcont
-          image: authservice
+        - name: gatewayservcont
+          image: gateway
           ports:
             - containerPort: 8080
           resources:
@@ -28,13 +28,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: authserv
+  name: gatewayserv
   labels:
-    app: authserv
+    app: gatewayserv
 spec:
   type: ClusterIP
   selector:
-    app: authserv
+    app: gatewayserv
   ports:
     - port: 80
       targetPort: 8080

@@ -8,7 +8,7 @@ RUN gradle build -x test  --no-daemon
 
 
 FROM amazoncorretto:17-alpine3.17
-ENV ARTIFACT_NAME=authservice-0.0.1-SNAPSHOT.jar
+ENV ARTIFACT_NAME=usermgmt-0.0.1-SNAPSHOT.jar
 ENV APP_DIR=/app
 WORKDIR ${APP_DIR}
 COPY --from=builder ${APP_DIR}/build/libs/* ./

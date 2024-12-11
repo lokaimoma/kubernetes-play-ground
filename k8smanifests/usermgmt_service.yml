@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: usermgmtdeploy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: usermgmt
+  template:
+    metadata:
+      labels:
+        app: usermgmt
+    spec:
+      containers:
+        - name: usermgmt
+          image: usermgmt
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              cpu: 100m
+              memory: 100Mi
+            limits:
+              cpu: 300m
+              memory: 500Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: usermgmt
+  labels:
+    app: usermgmt
+spec:
+  type: ClusterIP
+  selector:
+    app: usermgmt
+  ports:
+    - port: 80
+      targetPort: 8080
+    
+    
