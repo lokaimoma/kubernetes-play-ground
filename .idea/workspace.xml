@@ -4,18 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2c68b06-d78d-47cb-8131-b795ac9e3f27" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/authservice/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authservice/src/main/java/com/koc/authservice/AuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authservice/src/main/java/com/koc/authservice/KeycloakUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authservice/src/main/java/com/koc/authservice/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authservice/src/main/java/com/koc/authservice/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8smanifests/auth_service.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="a2c68b06-d78d-47cb-8131-b795ac9e3f27" name="Changes" comment="Create new users in keycloak">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8smanifests/kustomization.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8smanifests/kustomization.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keycloak/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/keycloak/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skaffold.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/skaffold.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authservice/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/authservice/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authservice/src/main/java/com/koc/authservice/SecurityConfig.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,19 +58,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/mnt/ld/projects/libmanagement/k8smanifests",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.3045977",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/mnt/ld/projects/libmanagement/k8smanifests&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.3045977&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/k8smanifests" />
@@ -93,6 +85,19 @@
       <option name="presentableId" value="Default" />
       <updated>1732187025602</updated>
     </task>
+    <task id="LOCAL-00001" summary="Create new users in keycloak">
+      <option name="closed" value="true" />
+      <created>1733849584336</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1733849584336</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Create new users in keycloak" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create new users in keycloak" />
   </component>
 </project>

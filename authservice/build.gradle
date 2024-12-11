@@ -25,7 +25,6 @@ repositories {
 
 dependencies {
 	implementation 'org.keycloak:keycloak-admin-client:26.0.3'
-	implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
