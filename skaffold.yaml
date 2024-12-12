@@ -12,10 +12,10 @@ build:
       context: keycloak
       docker:
         dockerfile: Dockerfile
-#    - image: usermgmt
-#      context: usermgmt
-#      docker:
-#        dockerfile: Dockerfile
+    - image: usermgmt
+      context: usermgmt
+      docker:
+        dockerfile: Dockerfile
     - image: gateway
       context: gateway
       docker:

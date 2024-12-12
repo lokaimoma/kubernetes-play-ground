@@ -4,23 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2c68b06-d78d-47cb-8131-b795ac9e3f27" name="Changes" comment="Store loan records">
-      <change afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/dto/UserLoginPayload.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/dto/UserOut.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="a2c68b06-d78d-47cb-8131-b795ac9e3f27" name="Changes" comment="Build user management and loan service">
       <change beforePath="$PROJECT_DIR$/k8smanifests/kustomization.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8smanifests/kustomization.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8smanifests/usermgmt_service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8smanifests/usermgmt_service.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/skaffold.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/skaffold.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usermgmt/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/controllers/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/BookLoan.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/entities/BookLoan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/BookLoanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/controllers/BookLoanController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/BookLoanRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/repositories/BookLoanRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/BookLoanService.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/services/BookLoanService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/KeycloakUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/services/KeycloakService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/LoanPayload.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/dto/LoanPayload.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/dto/UserIn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usermgmt/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,12 +144,21 @@
       <option name="project" value="LOCAL" />
       <updated>1733919936783</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Build user management and loan service">
+      <option name="closed" value="true" />
+      <created>1733982294065</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1733982294065</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Create new users in keycloak" />
     <MESSAGE value="Store loan records" />
-    <option name="LAST_COMMIT_MESSAGE" value="Store loan records" />
+    <MESSAGE value="Build user management and loan service" />
+    <option name="LAST_COMMIT_MESSAGE" value="Build user management and loan service" />
   </component>
 </project>
