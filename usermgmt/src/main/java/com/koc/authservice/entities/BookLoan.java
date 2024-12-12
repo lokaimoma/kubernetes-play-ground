@@ -1,11 +1,10 @@
-package com.koc.authservice;
+package com.koc.authservice.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.CreatedDate;
 
 import java.util.Date;
 import java.util.UUID;
@@ -19,9 +18,9 @@ public class BookLoan {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-    private String userId;
+    private String userEmail;
     private String bookId;
-    @CreatedDate
-    private Date checkoutDate;
+    @Builder.Default
+    private Date checkoutDate = new Date();
     private Date returnDate;
 }

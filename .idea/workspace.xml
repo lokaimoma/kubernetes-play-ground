@@ -4,35 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2c68b06-d78d-47cb-8131-b795ac9e3f27" name="Changes" comment="Create new users in keycloak">
-      <change afterPath="$PROJECT_DIR$/gateway/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/src/main/java/com/koc/gateway/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8smanifests/usermgmt_service.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/BookLoan.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/BookLoanController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/BookLoanRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/BookLoanService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/LoanPayload.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="a2c68b06-d78d-47cb-8131-b795ac9e3f27" name="Changes" comment="Store loan records">
+      <change afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/dto/UserLoginPayload.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/dto/UserOut.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authservice/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/.gitattributes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authservice/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authservice/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authservice/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authservice/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authservice/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authservice/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authservice/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authservice/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authservice/src/main/java/com/koc/authservice/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authservice/src/main/java/com/koc/authservice/AuthserviceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/AuthserviceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authservice/src/main/java/com/koc/authservice/KeycloakUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/KeycloakUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authservice/src/main/java/com/koc/authservice/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authservice/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authservice/src/test/java/com/koc/authservice/AuthserviceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/test/java/com/koc/authservice/AuthserviceApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8smanifests/auth_service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8smanifests/gateway_service.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/k8smanifests/kustomization.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8smanifests/kustomization.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8smanifests/usermgmt_service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8smanifests/usermgmt_service.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/skaffold.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/skaffold.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermgmt/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/controllers/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/BookLoan.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/entities/BookLoan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/BookLoanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/controllers/BookLoanController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/BookLoanRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/repositories/BookLoanRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/BookLoanService.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/services/BookLoanService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/KeycloakUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/services/KeycloakService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/LoanPayload.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/dto/LoanPayload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/dto/UserIn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermgmt/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +66,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -159,11 +150,20 @@
       <option name="project" value="LOCAL" />
       <updated>1733849584336</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Store loan records">
+      <option name="closed" value="true" />
+      <created>1733919936783</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1733919936783</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Create new users in keycloak" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create new users in keycloak" />
+    <MESSAGE value="Store loan records" />
+    <option name="LAST_COMMIT_MESSAGE" value="Store loan records" />
   </component>
 </project>

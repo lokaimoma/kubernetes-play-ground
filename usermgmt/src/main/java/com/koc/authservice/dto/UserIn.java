@@ -1,5 +1,7 @@
-package com.koc.authservice;
+package com.koc.authservice.dto;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.keycloak.representations.idm.CredentialRepresentation;
@@ -10,10 +12,15 @@ import java.util.List;
 
 @Data
 @NoArgsConstructor
-public class User {
+public class UserIn {
+    @NotNull
     private String firstName;
+    @NotNull
     private String lastName;
+    @Email
+    @NotNull
     private String email;
+    @NotNull
     private String password;
 
     public UserRepresentation toUserRepresentation() {
@@ -21,7 +28,7 @@ public class User {
         userRepresentation.setFirstName(firstName);
         userRepresentation.setLastName(lastName);
         userRepresentation.setEmail(email);
-        userRepresentation.setUsername(email.substring(0, email.indexOf(".")));
+        userRepresentation.setUsername(userNameFromEmail(email));
         userRepresentation.setEnabled(true);
         userRepresentation.setEmailVerified(true);
         List<CredentialRepresentation> credRep = new ArrayList<>();
@@ -31,5 +38,9 @@ public class User {
         credRep.add(cr);
         userRepresentation.setCredentials(credRep);
         return userRepresentation;
+    }
+
+    public static String userNameFromEmail(String email) {
+        return email.substring(0, email.indexOf("."));
     }
 }
