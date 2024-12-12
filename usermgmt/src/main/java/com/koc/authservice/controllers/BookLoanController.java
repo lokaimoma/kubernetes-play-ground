@@ -4,7 +4,9 @@ import com.koc.authservice.entities.BookLoan;
 import com.koc.authservice.services.BookLoanService;
 import com.koc.authservice.dto.LoanPayload;
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,9 +21,10 @@ public class BookLoanController {
 
     @GetMapping
     public ResponseEntity<Iterable<BookLoan>> getLoanRecords(@RequestParam(name = "size", defaultValue = "20") @Min(1) int size,
-                                                             @RequestParam(name = "page", defaultValue = "0") @Min(0) int page
+                                                             @RequestParam(name = "page", defaultValue = "0") @Min(0) int page,
+                                                             @RequestParam(name = "email") @Email @NotNull String email
     ) {
-        Iterable<BookLoan> bls = service.getBookLoans(size, page);
+        Iterable<BookLoan> bls = service.getBookLoans(size, page, email);
         return ResponseEntity.ok(bls);
     }
 

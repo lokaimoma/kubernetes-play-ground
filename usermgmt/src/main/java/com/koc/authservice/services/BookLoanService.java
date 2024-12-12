@@ -32,9 +32,9 @@ public class BookLoanService {
     private final KeycloakService keycloakService;
     private final BookLoanRepository repository;
 
-    public Iterable<BookLoan> getBookLoans(int size, int pageNumber) {
+    public Iterable<BookLoan> getBookLoans(int size, int pageNumber, String email) {
         Pageable p = PageRequest.of(pageNumber, size, Sort.by(Sort.Order.desc("checkoutDate")));
-        return repository.findAll(p);
+        return repository.findAllByUserEmail(email, p);
     }
 
     public LoanResponse addBookLoan(LoanPayload loanPayload) {
