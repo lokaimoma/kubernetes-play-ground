@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+        routes:
+          - id: usermgmt
+            uri: http://usermgmt
+            predicates:
+              - Path=/umgmt/**
+            filters:
+              - RewritePath=/umgmt/?(?<segment>.*), /$\{segment}
