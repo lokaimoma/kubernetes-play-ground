@@ -16,10 +16,10 @@ build:
       context: usermgmt
       docker:
         dockerfile: Dockerfile
-    - image: gateway
-      context: gateway
-      docker:
-        dockerfile: Dockerfile
+#    - image: gateway
+#      context: gateway
+#      docker:
+#        dockerfile: Dockerfile
   tagPolicy:
     inputDigest: {}
   local:

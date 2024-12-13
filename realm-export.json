@@ -779,6 +779,21 @@
           }
         },
         {
+          "id": "8f3970e2-c01a-437c-8c30-4af84d78060d",
+          "name": "realm roles",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usermodel-realm-role-mapper",
+          "consentRequired": false,
+          "config": {
+            "user.attribute": "foo",
+            "introspection.token.claim": "true",
+            "access.token.claim": "true",
+            "claim.name": "realm_access.roles",
+            "jsonType.label": "String",
+            "multivalued": "true"
+          }
+        },
+        {
           "id": "bba22aab-8283-4607-bede-3871d2c974ce",
           "name": "Client Host",
           "protocol": "openid-connect",
