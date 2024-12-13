@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2c68b06-d78d-47cb-8131-b795ac9e3f27" name="Changes" comment="Get loan records by email">
+      <change afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/SecuritConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/src/main/java/com/koc/gateway/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/java/com/koc/gateway/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8smanifests/kustomization.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8smanifests/kustomization.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skaffold.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/skaffold.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermgmt/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermgmt/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,8 +50,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Dockerfile" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>

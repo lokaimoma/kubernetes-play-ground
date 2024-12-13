@@ -11,13 +11,15 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
-
-
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://keycloak/realms/libmanagement
 keycloak:
   server-url: http://localhost:8081
   realm: libmanagement
   client-id: libmgmt_spring
   client-secret: vteQUtE6WmjIBN60Mpq3Pw1jOAUANghr
-
 services:
   bookmgmtserv: http://bookmgmtserv
