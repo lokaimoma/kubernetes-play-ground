@@ -10,3 +10,7 @@ spring:
               - Path=/umgmt/**
             filters:
               - RewritePath=/umgmt/?(?<segment>.*), /$\{segment}
+          - id: booksmgmtserv
+            uri: http://bookmgmtserv
+            predicates:
+              - Path=/api/books/**

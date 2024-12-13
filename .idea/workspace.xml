@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2c68b06-d78d-47cb-8131-b795ac9e3f27" name="Changes" comment="Get loan records by email">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booksmgmtserv/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/booksmgmtserv/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booksmgmtserv/src/main/java/com/koc/booksmgmtserv/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/booksmgmtserv/src/main/java/com/koc/booksmgmtserv/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/booksmgmtserv/src/main/java/com/koc/booksmgmtserv/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/booksmgmtserv/src/main/java/com/koc/booksmgmtserv/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booksmgmtserv/src/main/java/com/koc/booksmgmtserv/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/booksmgmtserv/src/main/java/com/koc/booksmgmtserv/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

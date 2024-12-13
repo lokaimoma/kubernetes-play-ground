@@ -68,5 +68,4 @@ public class BookController {
             case RETURNED -> ResponseEntity.ok(resp);
         };
     }
-
 }
