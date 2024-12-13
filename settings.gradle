@@ -1,0 +1,2 @@
+rootProject.name = 'libmanagement'
+include 'booksmgmtserv', 'gateway', 'usermgmt'
