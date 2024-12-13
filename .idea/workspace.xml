@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2c68b06-d78d-47cb-8131-b795ac9e3f27" name="Changes" comment="Get loan records by email">
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/feignClients/BookMgmtService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usermgmt/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/AuthserviceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/AuthserviceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usermgmt/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/controllers/BookLoanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/controllers/BookLoanController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
