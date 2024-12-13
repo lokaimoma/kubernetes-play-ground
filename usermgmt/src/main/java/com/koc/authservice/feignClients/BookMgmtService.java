@@ -1,9 +1,9 @@
 package com.koc.authservice.feignClients;
 
-import org.jboss.resteasy.annotations.jaxrs.QueryParam;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @FeignClient(name = "bookmgmtserv", url = "${services.bookmgmtserv}/api/books")
 public interface BookMgmtService {
@@ -20,8 +20,8 @@ public interface BookMgmtService {
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/borrow")
-    BorrowBookResponse borrowBook(@QueryParam("bookId") String bookId);
+    BorrowBookResponse borrowBook(@RequestParam("bookId") String bookId);
 
     @RequestMapping(method = RequestMethod.POST, value = "/return")
-    ReturnBookResponse returnBook(@QueryParam("bookId") String bookId);
+    ReturnBookResponse returnBook(@RequestParam("bookId") String bookId);
 }

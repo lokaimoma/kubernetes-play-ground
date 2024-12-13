@@ -5,6 +5,7 @@ import com.koc.authservice.services.KeycloakService;
 import com.koc.authservice.dto.UserIn;
 import jakarta.validation.Valid;
 import jakarta.ws.rs.BadRequestException;
+import jakarta.ws.rs.NotAuthorizedException;
 import jakarta.ws.rs.core.Response;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -49,7 +50,7 @@ public class AuthController {
         try {
             AccessTokenResponse at = userKc.tokenManager().getAccessToken();
             return ResponseEntity.ok(Optional.of(at));
-        } catch (BadRequestException e) {
+        } catch (BadRequestException | NotAuthorizedException e) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
     }

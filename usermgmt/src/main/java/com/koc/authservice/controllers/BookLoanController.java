@@ -4,11 +4,11 @@ import com.koc.authservice.entities.BookLoan;
 import com.koc.authservice.feignClients.BookMgmtService;
 import com.koc.authservice.services.BookLoanService;
 import com.koc.authservice.dto.LoanPayload;
+import feign.FeignException;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
-import jakarta.ws.rs.BadRequestException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -48,7 +48,7 @@ public class BookLoanController {
                 }
 
             };
-        } catch (BadRequestException e) {
+        } catch (FeignException.BadRequest e) {
             service.returnBook(payload);
             log.error("Failed to borrow book, Reason={}", e.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
@@ -62,7 +62,7 @@ public class BookLoanController {
             log.info("Return book response for {} = {}", payload.getBookId(), resp);
             service.returnBook(payload);
             return ResponseEntity.status(HttpStatus.OK).body("Loan record updated");
-        } catch (BadRequestException e) {
+        } catch (FeignException.BadRequest e) {
             log.error("Failed to return book, Reason={}", e.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }

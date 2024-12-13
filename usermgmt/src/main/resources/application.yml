@@ -16,8 +16,8 @@ spring:
 keycloak:
   server-url: http://localhost:8081
   realm: libmanagement
-  client-id: libmgmt_spring_cli
-  client-secret: 9Knb1Pq4L4N7YI1bZcdT2fsTXD8QBOhO
+  client-id: libmgmt_spring
+  client-secret: vteQUtE6WmjIBN60Mpq3Pw1jOAUANghr
 
 services:
-  bookgmgmtserv: http://bookmgmtserv
+  bookmgmtserv: http://bookmgmtserv
