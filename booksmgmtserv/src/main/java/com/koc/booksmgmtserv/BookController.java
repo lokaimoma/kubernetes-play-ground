@@ -1,5 +1,8 @@
 package com.koc.booksmgmtserv;
 
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.PageRequest;
@@ -19,13 +22,13 @@ public class BookController {
     private final BookService bookService;
 
     @GetMapping
-    public Iterable<Book> getBooks(@RequestParam(name = "size", defaultValue = "20") int size,
-                                   @RequestParam(name = "pageNumber", defaultValue = "0") int pageNumber) {
+    public Iterable<Book> getBooks(@RequestParam(name = "size", defaultValue = "20") @Min(1) int size,
+                                   @RequestParam(name = "pageNumber", defaultValue = "0") @Min(0) int pageNumber) {
         return bookService.getBooks(PageRequest.of(pageNumber, size));
     }
 
     @PostMapping(consumes = "application/json", produces = "application/json")
-    public ResponseEntity<Book> addBook(@RequestBody Book book) {
+    public ResponseEntity<Book> addBook(@RequestBody @Valid Book book) {
         try {
             Book bk = bookService.addBook(book);
             return ResponseEntity.status(HttpStatus.CREATED).body(bk);
@@ -46,6 +49,24 @@ public class BookController {
     public Optional<Book> getBooksByTitle(@RequestParam(name = "title", defaultValue = "") String title) {
         if (title.isBlank()) {return Optional.empty();}
         return bookService.getBookByTitle(title);
+    }
+
+    @PostMapping("/borrow")
+    public ResponseEntity<BookService.BorrowBookResponse> borrowBook(@RequestParam(name="bookId") @NotBlank String bookId) {
+        BookService.BorrowBookResponse resp = bookService.borrowBook(bookId);
+        return switch (resp) {
+            case NOT_AVAILABLE, INVALID_ID -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
+            case AVAILABLE -> ResponseEntity.ok(resp);
+        };
+    }
+
+    @PostMapping("/return")
+    public ResponseEntity<BookService.ReturnBookResponse> returnBook(@RequestParam(name="bookId") @NotBlank String bookId) {
+        BookService.ReturnBookResponse resp = bookService.returnBook(bookId);
+        return switch (resp) {
+            case ALL_BOOKS_ALREADY_RETURNED, INVALID_ID -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resp);
+            case RETURNED -> ResponseEntity.ok(resp);
+        };
     }
 
 }

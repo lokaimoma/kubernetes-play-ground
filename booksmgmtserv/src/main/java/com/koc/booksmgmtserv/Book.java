@@ -1,5 +1,7 @@
 package com.koc.booksmgmtserv;
 
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -11,8 +13,14 @@ import java.util.UUID;
 public class Book {
     @Id
     private UUID id;
+    @NotBlank
     private String title;
+    @NotBlank
     private String description;
+    @NotBlank
     private String author;
-    private int count;
+    @Min(1)
+    private int stock;
+    @Min(0)
+    private int available;
 }
