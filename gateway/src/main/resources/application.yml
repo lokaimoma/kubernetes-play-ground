@@ -14,3 +14,8 @@ spring:
             uri: http://bookmgmtserv
             predicates:
               - Path=/api/books/**
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://keycloak/realms/libmanagement
