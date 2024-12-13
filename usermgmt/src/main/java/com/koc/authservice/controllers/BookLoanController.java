@@ -36,20 +36,18 @@ public class BookLoanController {
     @PostMapping
     public ResponseEntity<String> loanBook(@RequestBody @Valid LoanPayload payload) {
         try {
+            if (service.verifyPendingLoan(payload)) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Load record already exists");
+            }
+            BookMgmtService.BorrowBookResponse resp = bookMgmtService.borrowBook(payload.getBookId());
+            log.info("Borrow response for {} = {}", payload.getBookId(), resp);
+
             BookLoanService.LoanResponse response = service.addBookLoan(payload);
             return switch (response) {
-                case BOOK_ALREADY_LOANED ->
-                        ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Load record already exists");
                 case USER_NOT_EXIST -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body("User does not exist");
-                case RECORD_CREATED -> {
-                    BookMgmtService.BorrowBookResponse resp = bookMgmtService.borrowBook(payload.getBookId());
-                    log.info("Borrow response for {} = {}", payload.getBookId(), resp);
-                    yield ResponseEntity.status(HttpStatus.CREATED).body("Loan record saved");
-                }
-
+                case RECORD_CREATED -> ResponseEntity.status(HttpStatus.CREATED).body("Loan record saved");
             };
         } catch (FeignException.BadRequest e) {
-            service.returnBook(payload);
             log.error("Failed to borrow book, Reason={}", e.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }

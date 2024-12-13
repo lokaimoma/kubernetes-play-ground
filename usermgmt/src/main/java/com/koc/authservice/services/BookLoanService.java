@@ -24,7 +24,6 @@ import java.util.Optional;
 public class BookLoanService {
 
     public enum LoanResponse {
-        BOOK_ALREADY_LOANED,
         USER_NOT_EXIST,
         RECORD_CREATED
     }
@@ -37,14 +36,14 @@ public class BookLoanService {
         return repository.findAllByUserEmail(email, p);
     }
 
-    public LoanResponse addBookLoan(LoanPayload loanPayload) {
+    public boolean verifyPendingLoan(LoanPayload loanPayload) {
         Optional<BookLoan> optBl = repository.findByUserEmailAndBookIdAndReturnDateIsNull(
                 loanPayload.getUserEmail(), loanPayload.getBookId()
         );
-        if (optBl.isPresent()) {
-            return LoanResponse.BOOK_ALREADY_LOANED;
-        }
+        return optBl.isPresent();
+    }
 
+    public LoanResponse addBookLoan(LoanPayload loanPayload) {
         Keycloak kc = keycloakService.getAdminKeycloak();
 
         try {
