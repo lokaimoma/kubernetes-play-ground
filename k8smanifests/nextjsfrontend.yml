@@ -1,8 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
-meta:
+metadata:
   name: nextjsfrontenddeploy
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: nextjsfrontend
@@ -21,13 +22,13 @@ spec:
               cpu: 100m
               memory: 100Mi
             limits:
-              cpu: 300m
-              memory: 500Mi
+              cpu: 900m
+              memory: 1000Mi
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: nextjsfrontendService
+  name: nextjsfrontendservice
   labels:
     app: nextjsfrontend
 spec:
