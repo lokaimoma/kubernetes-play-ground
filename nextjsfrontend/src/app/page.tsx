@@ -14,7 +14,7 @@ export default function Home() {
   }
 
   function login() {
-    signIn("keycloak")
+    signIn()
   }
 
   return (
