@@ -4,11 +4,12 @@ metadata:
   name: nextjsfrontendconfig
 data:
   env: |
-    NEXTAUTH_URL=http://localhost:8080
+    NEXTAUTH_URL=http://localhost:8080/c
     KEYCLOAK_CLIENT_SECRET=vteQUtE6WmjIBN60Mpq3Pw1jOAUANghr
     KEYCLOAK_CLIENT_ID=libmgmt_spring
     KEYCLOAK_REALM=libmanagement
     JWT_ISSUER_URI=http://keycloak/realms/libmanagement
+    NEXTAUTH_SECRET=3oJCRKb32emmyhbVU4RhRD8D8dUWAg66XVEwN3XcPl4=
 ---
 apiVersion: apps/v1
 kind: Deployment

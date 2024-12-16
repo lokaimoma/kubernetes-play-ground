@@ -15,9 +15,9 @@ spring:
             predicates:
               - Path=/api/books/**
           - id: frontend
-            uri: http://nextjsfrontend
+            uri: http://nextjsfrontendservice
             predicates:
-              - Path=/**
+              - Path=/c/**
             
   security:
     oauth2:
