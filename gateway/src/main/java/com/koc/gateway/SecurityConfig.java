@@ -23,7 +23,7 @@ public class SecurityConfig {
     @Bean
     public SecurityWebFilterChain securityFilterChain(ServerHttpSecurity http) {
         http.csrf(ServerHttpSecurity.CsrfSpec::disable);
-        http.authorizeExchange(exchange -> exchange.pathMatchers("/umgmt/auth/signup", "/umgmt/auth/login", "/c/**")
+        http.authorizeExchange(exchange -> exchange.pathMatchers("/umgmt/auth/signup", "/umgmt/auth/login")
                         .permitAll()
                         .anyExchange().authenticated())
                 .oauth2ResourceServer(serverSpec -> {
