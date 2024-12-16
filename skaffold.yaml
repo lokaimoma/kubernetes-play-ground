@@ -20,10 +20,6 @@ build:
       context: gateway
       docker:
         dockerfile: Dockerfile
-    # - image: nextjsfrontend
-    #   context: nextjsfrontend
-    #   docker:
-    #     dockerfile: Dockerfile
   tagPolicy:
     inputDigest: {}
   local:
