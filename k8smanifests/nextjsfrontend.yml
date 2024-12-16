@@ -1,3 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nextjsfrontendconfig
+data:
+  env: |
+    NEXTAUTH_URL=http://localhost:8080
+    KEYCLOAK_CLIENT_SECRET=vteQUtE6WmjIBN60Mpq3Pw1jOAUANghr
+    KEYCLOAK_CLIENT_ID=libmgmt_spring
+    KEYCLOAK_REALM=libmanagement
+    JWT_ISSUER_URI=http://keycloak/realms/libmanagement
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -24,6 +36,17 @@ spec:
             limits:
               cpu: 900m
               memory: 1000Mi
+          # volumeMounts:
+          #   - name: envfile
+          #     mountPath: /app/
+          #     readOnly: true
+      volumes:
+        - name: envfile
+          configMap:
+            name: nextjsfrontendconfig
+            items:
+              - key: env          
+                path: .env
 ---
 apiVersion: v1
 kind: Service

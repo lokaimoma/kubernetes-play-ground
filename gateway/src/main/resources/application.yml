@@ -14,6 +14,11 @@ spring:
             uri: http://bookmgmtserv
             predicates:
               - Path=/api/books/**
+          - id: frontend
+            uri: http://nextjsfrontend
+            predicates:
+              - Path=/**
+            
   security:
     oauth2:
       resourceserver:
