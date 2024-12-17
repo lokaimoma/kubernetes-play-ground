@@ -21,11 +21,16 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import { BookloandAdminRecord } from '@/app/types/dto'
+import { BookloandAdminRecord, ResultType } from '@/app/types/dto'
+import { returnBook } from "@/app/(protected)/actions";
+import { Loader2 } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 
-export function Main({borrowRecords}: {borrowRecords: BookloandAdminRecord[]}) {
+export function Main({ borrowRecords }: { borrowRecords: BookloandAdminRecord[] }) {
+  const router = useRouter();
   const [searchTerm, setSearchTerm] = useState('')
-  const [selectedRecord, setSelectedRecord] = useState<BookloandAdminRecord | null>(null)
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [isProcessing, setIsProcessing] = useState(false);
 
   const filteredRecords = borrowRecords.filter(record =>
     record.book.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -33,10 +38,18 @@ export function Main({borrowRecords}: {borrowRecords: BookloandAdminRecord[]}) {
   )
 
   const handleReturn = (record: BookloandAdminRecord) => {
-    // Here you would typically make an API call to update the book's status
-    console.log(`Marking book as returned: ${record.book.title}`)
-    // For now, we'll just close the dialog
-    setSelectedRecord(null)
+    setIsProcessing(true);
+    returnBook(record.book.id, record.userEmail).then(res => {
+      if (res.type === ResultType.ERROR) {
+        alert(res.errorMsg ?? "An error ooccured. Try again later");
+      } else {
+        alert(res.data ?? "Status saved");
+        router.refresh();
+      }
+    }).finally(() => {
+      setDialogOpen(false);
+      setIsProcessing(false);
+    })
   }
 
 
@@ -65,11 +78,10 @@ export function Main({borrowRecords}: {borrowRecords: BookloandAdminRecord[]}) {
               <TableCell>{record.userEmail}</TableCell>
               <TableCell>{record.checkoutDate}</TableCell>
               <TableCell>
-                <Dialog>
+                <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
                   <DialogTrigger asChild>
-                    <Button 
-                      variant="outline" 
-                      onClick={() => setSelectedRecord(record)}
+                    <Button
+                      variant="outline"
                     >
                       Mark as Returned
                     </Button>
@@ -82,13 +94,18 @@ export function Main({borrowRecords}: {borrowRecords: BookloandAdminRecord[]}) {
                       </DialogDescription>
                     </DialogHeader>
                     <div>
-                      <p><strong>Book:</strong> {selectedRecord?.book.title}</p>
-                      <p><strong>Borrower:</strong> {selectedRecord?.userEmail}</p>
-                      <p><strong>Borrow Date:</strong> {selectedRecord?.checkoutDate}</p>
+                      <p><strong>Book:</strong> {record.book.title}</p>
+                      <p><strong>Borrower:</strong> {record.userEmail}</p>
+                      <p><strong>Borrow Date:</strong> {record.checkoutDate}</p>
                     </div>
                     <DialogFooter>
-                      <Button variant="outline" onClick={() => setSelectedRecord(null)}>Cancel</Button>
-                      <Button onClick={() => selectedRecord && handleReturn(selectedRecord)}>Confirm Return</Button>
+                      <Button variant="outline" onClick={() => setDialogOpen(false)} disabled={isProcessing}>Cancel</Button>
+                      {isProcessing ? (<>
+                        <Button>
+                          <Loader2 className='animate-spin' />
+                          Please wait...
+                        </Button>
+                      </>) : (<Button onClick={() => handleReturn(record)}>Confirm Return</Button>)}
                     </DialogFooter>
                   </DialogContent>
                 </Dialog>

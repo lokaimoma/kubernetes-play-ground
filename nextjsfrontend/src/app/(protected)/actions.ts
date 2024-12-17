@@ -4,10 +4,21 @@ import { serverSession } from "@/auth";
 import { redirect, RedirectType } from "next/navigation";
 import { ResultType, Error, Result } from "@/app/types/dto";
 
-export { loanBook };
+export { loanBook, returnBook };
 
+async function returnBook(bookId: string, userEmail: string) {
+  return action("/umgmt/loan/return", JSON.stringify({bookId, userEmail}));
+}
 
-async function loanBook(bookId: string): Promise<Result<string>>{
+async function loanBook(bookId: string) {
+  const session = await serverSession();
+  if (session === null) {
+    return redirect("/?error=tokenError", RedirectType.replace);
+  }
+  return action("/umgmt/loan", JSON.stringify({bookId, userEmail: session.user.email}))
+}
+
+async function action(endpoint: string, json: string): Promise<Result<string>>{
   const session = await serverSession();
   if (session === null) {
     return redirect("/?error=tokenError", RedirectType.replace);
@@ -17,10 +28,10 @@ async function loanBook(bookId: string): Promise<Result<string>>{
   let response;
 
   try {
-    response = await fetch(`${process.env.BACKEND_URI}/umgmt/loan`, {
+    response = await fetch(`${process.env.BACKEND_URI}${endpoint}`, {
       headers: { "Authorization": `Bearer ${session.access_token}`, "Content-Type": "application/json" },
       method: "POST",
-      body: JSON.stringify({bookId, userEmail: session.user.email})
+      body: json
     });
   } catch (e) {
     console.log("Fetch error: ", e);

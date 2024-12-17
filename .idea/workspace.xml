@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2c68b06-d78d-47cb-8131-b795ac9e3f27" name="Changes" comment="Add endpoint for returning borrow records for admin">
-      <change beforePath="$PROJECT_DIR$/nextjsfrontend/src/app/(protected)/books/components/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjsfrontend/src/app/(protected)/books/components/main.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="a2c68b06-d78d-47cb-8131-b795ac9e3f27" name="Changes" comment="Add endpoint for returning borrow records for admin" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

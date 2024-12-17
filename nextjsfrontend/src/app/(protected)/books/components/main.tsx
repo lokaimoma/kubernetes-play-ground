@@ -3,7 +3,7 @@ import { Book, ResultType } from "@/app/types/dto"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
-import { Loader2 } from "lucide-react";
+import { Loader2, SatelliteDish } from "lucide-react";
 import { useSession } from "next-auth/react"
 import { useState } from "react"
 import { loanBook } from "@/app/(protected)/actions";
@@ -29,6 +29,7 @@ export function Main({ books }: { books: Book[] }) {
         alert(res.errorMsg ? "You've already borrowed this book" : "Failed to borrow book");
       }
     }).finally(() => {
+      setDialogOpen(false);
       setBorrowingBook(false);
     })
   }
