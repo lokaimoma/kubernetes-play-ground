@@ -1,4 +1,4 @@
-export type {Book, Result, LoginResponse};
+export type {Book, Result, LoginResponse, BookLoan};
 export {ResultType, Error};
 
 
@@ -26,6 +26,7 @@ enum Error {
   UN_AUTHORIZED,
   BACKEND_ERROR,
   JSON_PARSE_ERROR,
+  UN_KNOWN,
 }
 
 interface Result<T> {
@@ -41,5 +42,19 @@ interface Book {
   description: string;
   id: string;
   available: number;
+}
+
+interface BookLoan {
+  id: string;
+  checkoutDate: string;
+  returnDate?: string;
+  book: {
+    id: string;
+    title: string;
+    description: string;
+    author: string;
+    stock: number;
+    available: number;
+  }
 }
 

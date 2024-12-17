@@ -3,6 +3,7 @@ package com.koc.booksmgmtserv;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.PageRequest;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/books")
@@ -26,6 +28,12 @@ public class BookController {
                                    @RequestParam(name = "pageNumber", defaultValue = "0") @Min(0) int pageNumber) {
         return bookService.getBooks(PageRequest.of(pageNumber, size));
     }
+
+    @GetMapping("/{id}")
+    public Optional<Book> getBook(@PathVariable("id") @NotNull UUID id) {
+        return bookService.getBookById(id);
+    }
+
 
     @PostMapping(consumes = "application/json", produces = "application/json")
     public ResponseEntity<Book> addBook(@RequestBody @Valid Book book) {

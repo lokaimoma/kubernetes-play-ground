@@ -1,5 +1,6 @@
 package com.koc.authservice.controllers;
 
+import com.koc.authservice.dto.BookloanDTO;
 import com.koc.authservice.entities.BookLoan;
 import com.koc.authservice.feignClients.BookMgmtService;
 import com.koc.authservice.services.BookLoanService;
@@ -25,11 +26,11 @@ public class BookLoanController {
     private final BookMgmtService bookMgmtService;
 
     @GetMapping
-    public ResponseEntity<Iterable<BookLoan>> getLoanRecords(@RequestParam(name = "size", defaultValue = "20") @Min(1) int size,
-                                                             @RequestParam(name = "page", defaultValue = "0") @Min(0) int page,
-                                                             @RequestParam(name = "email") @Email @NotNull String email
+    public ResponseEntity<Iterable<BookloanDTO>> getLoanRecords(@RequestParam(name = "size", defaultValue = "20") @Min(1) int size,
+                                                                @RequestParam(name = "page", defaultValue = "0") @Min(0) int page,
+                                                                @RequestParam(name = "email") @Email @NotNull String email
     ) {
-        Iterable<BookLoan> bls = service.getBookLoans(size, page, email);
+        Iterable<BookloanDTO> bls = service.getBookLoans(size, page, email);
         return ResponseEntity.ok(bls);
     }
 

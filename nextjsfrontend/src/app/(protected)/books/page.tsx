@@ -10,7 +10,7 @@ export default async function Home() {
       case Error.JSON_PARSE_ERROR:
       case Error.BACKEND_ERROR:
       default:
-        redirect("/")
+        redirect("/?error=BackendError");
     }
   }
 

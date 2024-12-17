@@ -1,33 +1,23 @@
-'use client'
+import { getBorrowHistory } from "@/app/(protected)/datafetchers";
+import { ResultType, Error } from "@/app/types/dto";
+import { redirect } from "next/navigation";
+import { Main } from "./components/Main";
 
-import { Button } from "@/components/ui/button"
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
-import { borrowRecords } from '@/app/mockData';
-import { useSession } from "next-auth/react";
-
-export default function BorrowHistory() {
-  const { data: session, status } = useSession()
+export default async function BorrowHistory() {
+  const borrowRecords = await getBorrowHistory();
+  if (borrowRecords.type === ResultType.ERROR || borrowRecords.data === undefined) {
+    switch (borrowRecords.error) {
+      case Error.JSON_PARSE_ERROR:
+      case Error.BACKEND_ERROR:
+      default:
+        console.log("Error: ", borrowRecords.error, borrowRecords.errorMsg)
+        redirect("/?error=BackendError");
+    }
+  }
 
   return (
     <>
-      <table className="min-w-full bg-white">
-        <thead>
-          <tr>
-            <th className="py-2 px-4 border-b">Book Title</th>
-            <th className="py-2 px-4 border-b">Borrow Date</th>
-            <th className="py-2 px-4 border-b">Return Date</th>
-          </tr>
-        </thead>
-        <tbody>
-          {borrowRecords.map(record => (
-            <tr key={record.id}>
-              <td className="py-2 px-4 border-b">{record.bookTitle}</td>
-              <td className="py-2 px-4 border-b">{record.borrowDate}</td>
-              <td className="py-2 px-4 border-b">{record.returnDate || 'Not returned'}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <Main borrowRecords={borrowRecords.data}/>
     </>
   )
 }

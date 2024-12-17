@@ -1,14 +1,17 @@
 package com.koc.authservice.services;
 
+import com.koc.authservice.dto.BookloanDTO;
 import com.koc.authservice.dto.UserIn;
 import com.koc.authservice.entities.BookLoan;
 import com.koc.authservice.dto.LoanPayload;
+import com.koc.authservice.feignClients.BookMgmtService;
 import com.koc.authservice.repositories.BookLoanRepository;
 import jakarta.ws.rs.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.keycloak.admin.client.Keycloak;
 import org.keycloak.representations.idm.UserRepresentation;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -30,10 +33,16 @@ public class BookLoanService {
 
     private final KeycloakService keycloakService;
     private final BookLoanRepository repository;
+    private final BookMgmtService bookMgmtService;
 
-    public Iterable<BookLoan> getBookLoans(int size, int pageNumber, String email) {
+    public Iterable<BookloanDTO> getBookLoans(int size, int pageNumber, String email) {
         Pageable p = PageRequest.of(pageNumber, size, Sort.by(Sort.Order.desc("checkoutDate")));
-        return repository.findAllByUserEmail(email, p);
+        Page<BookLoan> loans = repository.findAllByUserEmail(email, p);
+        return loans.stream().map(l -> {
+           BookMgmtService.BookResponse bk = bookMgmtService.getBook(l.getBookId());
+           return BookloanDTO.builder().id(l.getId().toString()).Book(bk).returnDate(l.getReturnDate()).checkoutDate(l.getCheckoutDate())
+                   .build();
+        }).toList();
     }
 
     public boolean verifyPendingLoan(LoanPayload loanPayload) {

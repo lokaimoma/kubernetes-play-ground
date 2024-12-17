@@ -19,6 +19,10 @@ public class BookService {
         return bookRepository.findAll(p);
     }
 
+    public Optional<Book> getBookById(UUID id) {
+        return bookRepository.findById(id);
+    }
+
     public Optional<Book> getBookByTitle(String title) {
         return bookRepository.findByTitle(title);
     }

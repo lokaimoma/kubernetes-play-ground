@@ -5,7 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2c68b06-d78d-47cb-8131-b795ac9e3f27" name="Changes" comment="Remove frontend entries from gateway">
+      <change afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/dto/BookloanDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booksmgmtserv/src/main/java/com/koc/booksmgmtserv/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/booksmgmtserv/src/main/java/com/koc/booksmgmtserv/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booksmgmtserv/src/main/java/com/koc/booksmgmtserv/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/booksmgmtserv/src/main/java/com/koc/booksmgmtserv/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjsfrontend/src/app/(protected)/books/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjsfrontend/src/app/(protected)/books/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjsfrontend/src/app/(protected)/datafetchers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nextjsfrontend/src/app/(protected)/datafetchers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjsfrontend/src/app/(protected)/history/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjsfrontend/src/app/(protected)/history/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjsfrontend/src/app/types/dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nextjsfrontend/src/app/types/dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/controllers/BookLoanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/controllers/BookLoanController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/feignClients/BookMgmtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/feignClients/BookMgmtService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/services/BookLoanService.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/services/BookLoanService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
