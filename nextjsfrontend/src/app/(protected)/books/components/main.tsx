@@ -1,15 +1,18 @@
 "use client";
-import { Book } from "@/app/types/dto"
+import { Book, ResultType } from "@/app/types/dto"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
+import { Loader2 } from "lucide-react";
 import { useSession } from "next-auth/react"
 import { useState } from "react"
+import { loanBook } from "@/app/(protected)/actions";
 
-export function Main({books}: {books: Book[]}) {
+export function Main({ books }: { books: Book[] }) {
   const [searchTerm, setSearchTerm] = useState('')
-  const [selectedBook, setSelectedBook] = useState<Book | null>(null)
   const { data: session, status } = useSession()
+  const [borrowingBook, setBorrowingBook] = useState(false);
+  const [dialogOpen, setDialogOpen] = useState(false);
 
 
   const filteredBooks = books.filter(book =>
@@ -18,10 +21,16 @@ export function Main({books}: {books: Book[]}) {
   )
 
   const handleBorrow = (book: Book) => {
-    // Here you would typically make an API call to update the book's status
-    console.log(`Borrowing book: ${book.title}`)
-    // For now, we'll just close the dialog
-    setSelectedBook(null)
+    setBorrowingBook(true);
+    loanBook(book.id).then(res => {
+      if (res.type === ResultType.Ok) {
+        alert(res.data);
+      }else {
+        alert(res.errorMsg ? "You've already borrowed this book" : "Failed to borrow book");
+      }
+    }).finally(() => {
+      setBorrowingBook(false);
+    })
   }
 
   return (
@@ -35,18 +44,17 @@ export function Main({books}: {books: Book[]}) {
       />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {filteredBooks.map(book => (
-          <Dialog key={book.id}>
+          <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
             <DialogTrigger asChild>
               <div
                 className="p-4 border rounded-lg cursor-pointer hover:bg-gray-100"
-                onClick={() => setSelectedBook(book)}
               >
                 <h2 className="text-lg font-semibold">{book.title}</h2>
                 <p className="text-sm text-gray-600">{book.author}</p>
                 <p className="text-sm mt-2">{book.available ? 'Available' : 'Borrowed'}</p>
               </div>
             </DialogTrigger>
-            <DialogContent>
+            <DialogContent onInteractOutside={(e) => e.preventDefault()} onEscapeKeyDown={(e) => e.preventDefault()}>
               <DialogHeader>
                 <DialogTitle>{book.title}</DialogTitle>
                 <DialogDescription>{book.author}</DialogDescription>
@@ -54,8 +62,12 @@ export function Main({books}: {books: Book[]}) {
               <p>{book.description}</p>
               <Button
                 onClick={() => handleBorrow(book)}
+                disabled={borrowingBook}
               >
-                {book.available > 0 ? 'Borrow' : 'Not Available'}
+                {borrowingBook ? (<>
+                  <Loader2 className="animate-spin" />
+                  Please wait
+                </>) : (<>{book.available > 0 ? 'Borrow' : 'Not Available'}</>)}
               </Button>
             </DialogContent>
           </Dialog>
@@ -63,5 +75,5 @@ export function Main({books}: {books: Book[]}) {
       </div>
     </>
   )
-  
+
 }

@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2c68b06-d78d-47cb-8131-b795ac9e3f27" name="Changes" comment="Add endpoint for returning borrow records for admin">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjsfrontend/src/app/(protected)/admin/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjsfrontend/src/app/(protected)/admin/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjsfrontend/src/app/(protected)/datafetchers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nextjsfrontend/src/app/(protected)/datafetchers.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjsfrontend/src/app/types/dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nextjsfrontend/src/app/types/dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/dto/BookloanAdminRecords.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/dto/BookloanAdminRecords.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/repositories/BookLoanRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/repositories/BookLoanRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/services/BookLoanService.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/services/BookLoanService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjsfrontend/src/app/(protected)/books/components/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjsfrontend/src/app/(protected)/books/components/main.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
