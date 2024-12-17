@@ -1,11 +1,15 @@
 "use server";
 import { serverSession } from "@/auth";
 import type { BookLoan, Result } from "@/app/types/dto";
-import { Error, ResultType, Book } from "@/app/types/dto";
+import { Error, ResultType, Book, BookloandAdminRecord } from "@/app/types/dto";
 import { redirect, RedirectType } from "next/navigation";
 
 
-export { getBooks, getBorrowHistory };
+export { getBooks, getBorrowHistory, getAllBorrowRecords };
+
+async function getAllBorrowRecords(): Promise<Result<BookloandAdminRecord[]>> {
+  return fetchPagedData<BookloandAdminRecord>("/umgmt/loan/admin");
+}
 
 async function getBooks(): Promise<Result<Book[]>> {
   return fetchPagedData<Book>("/api/books");

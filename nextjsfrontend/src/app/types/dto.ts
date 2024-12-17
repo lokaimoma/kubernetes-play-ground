@@ -1,4 +1,4 @@
-export type {Book, Result, LoginResponse, BookLoan};
+export type {Book, Result, LoginResponse, BookLoan, BookloandAdminRecord};
 export {ResultType, Error};
 
 
@@ -56,5 +56,9 @@ interface BookLoan {
     stock: number;
     available: number;
   }
+}
+
+interface BookloandAdminRecord extends BookLoan {
+  userEmail: string;
 }
 

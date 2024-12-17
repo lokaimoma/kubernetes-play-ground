@@ -1,10 +1,11 @@
 package com.koc.authservice.dto;
 
 import com.koc.authservice.feignClients.BookMgmtService;
+import lombok.Getter;
 
 import java.util.Date;
 
-
+@Getter
 public class BookloanAdminRecords extends BookloanDTO {
     String userEmail;
 

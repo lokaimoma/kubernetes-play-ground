@@ -48,7 +48,7 @@ public class BookLoanService {
 
     public Iterable<BookloanAdminRecords> getBorrowRecords(int size, int pageNumber) {
         Pageable p = PageRequest.of(pageNumber, size);
-        return repository.findAllAndReturnDateIsNull(p).stream().map(l -> {
+        return repository.findByReturnDateIsNull(p).stream().map(l -> {
             BookMgmtService.BookResponse bk = bookMgmtService.getBook(l.getBookId());
             return new BookloanAdminRecords(l.getUserEmail(), l.getId().toString(), l.getCheckoutDate(), l.getReturnDate(), bk);
         }).toList();

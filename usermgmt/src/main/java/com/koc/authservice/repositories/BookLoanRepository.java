@@ -11,5 +11,5 @@ import java.util.UUID;
 public interface BookLoanRepository extends JpaRepository<BookLoan, UUID> {
     Optional<BookLoan> findByUserEmailAndBookIdAndReturnDateIsNull(String userEmail, String bookId);
     Page<BookLoan> findAllByUserEmail(String email, Pageable p);
-    Page<BookLoan> findAllAndReturnDateIsNull(Pageable p);
+    Page<BookLoan> findByReturnDateIsNull(Pageable p);
 }
