@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2c68b06-d78d-47cb-8131-b795ac9e3f27" name="Changes" comment="Remove frontend entries from gateway">
+    <list default="true" id="a2c68b06-d78d-47cb-8131-b795ac9e3f27" name="Changes" comment="Add endpoint for returning borrow records for admin">
+      <change afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/dto/BookloanAdminRecords.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/controllers/BookLoanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/controllers/BookLoanController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/dto/BookloanDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/dto/BookloanDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/repositories/BookLoanRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/repositories/BookLoanRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/services/BookLoanService.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermgmt/src/main/java/com/koc/authservice/services/BookLoanService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +191,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734361752179</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add endpoint for returning borrow records for admin">
+      <option name="closed" value="true" />
+      <created>1734429637022</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1734429637022</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -197,6 +209,7 @@
     <MESSAGE value="Run user management service on k8s" />
     <MESSAGE value="Get loan records by email" />
     <MESSAGE value="Remove frontend entries from gateway" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove frontend entries from gateway" />
+    <MESSAGE value="Add endpoint for returning borrow records for admin" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add endpoint for returning borrow records for admin" />
   </component>
 </project>
