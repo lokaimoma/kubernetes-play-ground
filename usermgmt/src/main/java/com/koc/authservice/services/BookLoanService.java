@@ -1,5 +1,6 @@
 package com.koc.authservice.services;
 
+import com.koc.authservice.dto.BookloanAdminRecords;
 import com.koc.authservice.dto.BookloanDTO;
 import com.koc.authservice.dto.UserIn;
 import com.koc.authservice.entities.BookLoan;
@@ -42,6 +43,14 @@ public class BookLoanService {
            BookMgmtService.BookResponse bk = bookMgmtService.getBook(l.getBookId());
            return BookloanDTO.builder().id(l.getId().toString()).Book(bk).returnDate(l.getReturnDate()).checkoutDate(l.getCheckoutDate())
                    .build();
+        }).toList();
+    }
+
+    public Iterable<BookloanAdminRecords> getBorrowRecords(int size, int pageNumber) {
+        Pageable p = PageRequest.of(pageNumber, size);
+        return repository.findAllAndReturnDateIsNull(p).stream().map(l -> {
+            BookMgmtService.BookResponse bk = bookMgmtService.getBook(l.getBookId());
+            return new BookloanAdminRecords(l.getUserEmail(), l.getId().toString(), l.getCheckoutDate(), l.getReturnDate(), bk);
         }).toList();
     }
 
