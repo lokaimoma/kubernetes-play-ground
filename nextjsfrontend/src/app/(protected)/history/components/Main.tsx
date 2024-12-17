@@ -21,8 +21,8 @@ export function Main({borrowRecords}: {borrowRecords: BookLoan[]}) {
           {borrowRecords.map(record => (
             <tr key={record.id}>
               <td className="py-2 px-4 border-b">{record.book.title}</td>
-              <td className="py-2 px-4 border-b">{record.checkoutDate}</td>
-              <td className="py-2 px-4 border-b">{record.returnDate || 'Not returned'}</td>
+              <td className="py-2 px-4 border-b">{new Date(record.checkoutDate).toLocaleString()}</td>
+              <td className="py-2 px-4 border-b">{record.returnDate ? new Date(record.returnDate).toLocaleString() : 'Not returned'}</td>
             </tr>
           ))}
         </tbody>

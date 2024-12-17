@@ -76,7 +76,7 @@ export function Main({ borrowRecords }: { borrowRecords: BookloandAdminRecord[] 
             <TableRow key={record.id}>
               <TableCell>{record.book.title}</TableCell>
               <TableCell>{record.userEmail}</TableCell>
-              <TableCell>{record.checkoutDate}</TableCell>
+              <TableCell>{new Date(record.checkoutDate).toLocaleString()}</TableCell>
               <TableCell>
                 <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
                   <DialogTrigger asChild>
@@ -96,7 +96,7 @@ export function Main({ borrowRecords }: { borrowRecords: BookloandAdminRecord[] 
                     <div>
                       <p><strong>Book:</strong> {record.book.title}</p>
                       <p><strong>Borrower:</strong> {record.userEmail}</p>
-                      <p><strong>Borrow Date:</strong> {record.checkoutDate}</p>
+                      <p><strong>Borrow Date:</strong> {new Date(record.checkoutDate).toLocaleString()}</p>
                     </div>
                     <DialogFooter>
                       <Button variant="outline" onClick={() => setDialogOpen(false)} disabled={isProcessing}>Cancel</Button>
