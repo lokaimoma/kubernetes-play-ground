@@ -20,6 +20,18 @@ build:
       context: gateway
       docker:
         dockerfile: Dockerfile
+    # - image: nextjsfrontend
+    #   context: nextjsfrontend
+    #   docker:
+    #     dockerfile: Dockerfile
+    # - image: mongodatabase
+    #   context: databases
+    #   docker:
+    #     dockerfile: mongodb-dockerfile
+    # - image: postgresqldatabase
+    #   context: databases
+    #   docker:
+    #     dockerfile: postgresql-dockerfile
   tagPolicy:
     inputDigest: {}
   local:
