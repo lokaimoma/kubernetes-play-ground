@@ -1,7 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  # - book_management_service.yml
-  # - keycloak.yml
+  - book_management_service.yml
+  - keycloak.yml
   - usermgmt_service.yml
-  # - gateway_service.yml
+  - gateway_service.yml
