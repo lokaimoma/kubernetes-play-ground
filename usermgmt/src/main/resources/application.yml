@@ -2,7 +2,7 @@ spring:
   application:
     name: authservice
   datasource:
-    url: jdbc:postgresql://localhost:5432/bookloan
+    url: jdbc:postgresql://postgresql.docker.internal:5432/bookloan
     username: user
     password: password
   jpa:
@@ -17,7 +17,7 @@ spring:
         jwt:
           issuer-uri: http://keycloak/realms/libmanagement
 keycloak:
-  server-url: http://localhost:8081
+  server-url: http://keycloak
   realm: libmanagement
   client-id: libmgmt_spring
   client-secret: vteQUtE6WmjIBN60Mpq3Pw1jOAUANghr

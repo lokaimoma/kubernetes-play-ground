@@ -20,10 +20,28 @@ build:
       context: gateway
       docker:
         dockerfile: Dockerfile
-    # - image: nextjsfrontend
-    #   context: nextjsfrontend
-    #   docker:
-    #     dockerfile: Dockerfile
+    - image: nextjsfrontend
+      context: nextjsfrontend
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: "nextjsfrontend/src/"
+            dest: "app/src"
+          - src: "nextjsfrontend/.gitignore"
+            dest: "app/"
+          - src: "nextjsfrontend/.gitignore"
+            dest: "app/"
+          - src: "nextjsfrontend/.dockerignore"
+            dest: "app/"
+          - src: "nextjsfrontend/tsconfig.json"
+            dest: "app/"
+          - src: "nextjsfrontend/tailwind.config.json"
+            dest: "app/"
+          - src: "nextjsfrontend/README.md"
+            dest: "app/"
+          - src: "nextjsfrontend/.env"
+            dest: "app/"
     # - image: mongodatabase
     #   context: databases
     #   docker:
@@ -41,4 +59,8 @@ manifests:
     paths:
       - k8smanifests
 deploy:
-  kubectl: {}
+  kubectl:
+    hooks:
+      before:
+        - host:
+            command: ["sh", "-c", "docker compose up -d"]

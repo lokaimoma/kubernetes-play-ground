@@ -1,4 +1,4 @@
 FROM postgres:12.21-bookworm
+COPY 
 ENV POSTGRES_USER: user
 ENV POSTGRES_PASSWORD: password
-ENV POSTGRES_DB: keycloakdb

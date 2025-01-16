@@ -7,15 +7,32 @@ services:
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: keycloakdb
     volumes:
       - psql_vol:/var/lib/postgresql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - kind
 
   adminer:
     image: adminer:4.8.1-standalone
     ports:
       - 9090:8080
 
+  mongodb:
+    image: mongo:8.0.3
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: user
+      MONGO_INITDB_ROOT_PASSWORD: password
+    ports:
+      - 27018:27017
+    networks:
+      - kind
+
 
 volumes:
   psql_vol:
+
+networks:
+  kind:
+    external: true
+  
