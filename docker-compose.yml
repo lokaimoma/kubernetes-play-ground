@@ -11,7 +11,7 @@ services:
       - psql_vol:/var/lib/postgresql
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
-      - kind
+      - libmgmt-netwk
 
   adminer:
     image: adminer:4.8.1-standalone
@@ -26,13 +26,22 @@ services:
     ports:
       - 27018:27017
     networks:
-      - kind
+      - libmgmt-netwk
+
+  nextjsfrontend:
+    build:
+      context: ./nextjsfrontend
+    ports: 
+      - 3000:3000
+    networks:
+      - libmgmt-netwk
+      
 
 
 volumes:
   psql_vol:
 
 networks:
-  kind:
+  libmgmt-netwk:
     external: true
   

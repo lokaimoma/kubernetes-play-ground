@@ -3,8 +3,8 @@ spring:
     name: booksmgmtserv
   data:
     mongodb:
-      host: mongodb.docker.internal
-      port: 27018
+      host: mongodb
+      port: 27017
       database: bookManagementDB
       username: user
       password: password

@@ -20,36 +20,6 @@ build:
       context: gateway
       docker:
         dockerfile: Dockerfile
-    - image: nextjsfrontend
-      context: nextjsfrontend
-      docker:
-        dockerfile: Dockerfile
-      sync:
-        manual:
-          - src: "nextjsfrontend/src/"
-            dest: "app/src"
-          - src: "nextjsfrontend/.gitignore"
-            dest: "app/"
-          - src: "nextjsfrontend/.gitignore"
-            dest: "app/"
-          - src: "nextjsfrontend/.dockerignore"
-            dest: "app/"
-          - src: "nextjsfrontend/tsconfig.json"
-            dest: "app/"
-          - src: "nextjsfrontend/tailwind.config.json"
-            dest: "app/"
-          - src: "nextjsfrontend/README.md"
-            dest: "app/"
-          - src: "nextjsfrontend/.env"
-            dest: "app/"
-    # - image: mongodatabase
-    #   context: databases
-    #   docker:
-    #     dockerfile: mongodb-dockerfile
-    # - image: postgresqldatabase
-    #   context: databases
-    #   docker:
-    #     dockerfile: postgresql-dockerfile
   tagPolicy:
     inputDigest: {}
   local:
@@ -64,3 +34,12 @@ deploy:
       before:
         - host:
             command: ["sh", "-c", "docker compose up -d"]
+portForward:
+  - resourceType: Service
+    resourceName: gatewayserv
+    localPort: 8080
+    port: 80
+  - resourceType: Service
+    resourceName: keycloak
+    localPort: 8081
+    port: 80

@@ -2,7 +2,7 @@ spring:
   application:
     name: authservice
   datasource:
-    url: jdbc:postgresql://postgresql.docker.internal:5432/bookloan
+    url: jdbc:postgresql://postgresql:5432/bookloan
     username: user
     password: password
   jpa:
